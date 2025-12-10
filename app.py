@@ -1,16 +1,8 @@
-import subprocess
-import sys
-
-subprocess.run([sys.executable, "-m", "pip", "install", "seaborn"])
-import seaborn as sns
-print("Seaborn installed successfully:", sns.__version__)
-
-
 import streamlit as st
 import pandas as pd
 import sqlite3
 from datetime import date
-#import seaborn as sns
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 # --------------------------------------------
