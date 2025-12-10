@@ -39,7 +39,7 @@ song_dict = {
 # Streamlit App
 # --------------------------------------------
 st.title("🎵 Mood Based Music Recommender")
-sst.write("-----------")
+st.write("-----------")
 st.write("Hellooooooooooooooooooo buddy")
 st.write("Log how you feel, uncover mood patterns, and enjoy personalized playlists!")
 # User Input Section
