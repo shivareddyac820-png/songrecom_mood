@@ -1,0 +1,7 @@
+[python]
+version = "3.11"
+
+[server]
+headless = true
+enableCORS = false
+port = $PORT
