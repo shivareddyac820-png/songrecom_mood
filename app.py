@@ -38,17 +38,18 @@ song_dict = {
 # --------------------------------------------
 # Streamlit App
 # --------------------------------------------
-st.title("🎵 Mood Journal & Music Recommender")
-st.write("Log your mood, track trends, and get a personalized music recommendation!")
-
+st.title("🎵 Mood Based Music Recommender")
+sst.write("-----------")
+st.write("Hellooooooooooooooooooo buddy")
+st.write("Log how you feel, uncover mood patterns, and enjoy personalized playlists!")
 # User Input Section
 user_name = st.text_input("Enter your name:")
-mood = st.selectbox("How are you feeling today?", ["Happy", "Sad", "Excited", "Stressed", "Calm"])
+mood = st.selectbox("How is your Mood today?", ["Happy", "Sad", "Excited", "Stressed", "Calm"])
 notes = st.text_area("Optional notes:")
 
-if st.button("Save Mood Entry"):
+if st.button("Save your Feeling"):
     if user_name.strip() == "":
-        st.error("Please enter your name before saving.")
+        st.error("Hello buddy.... Please enter your name before saving.")
     else:
         today = str(date.today())
         song_link = song_dict[mood]
@@ -57,13 +58,13 @@ if st.button("Save Mood Entry"):
                 (user_name, today, mood, notes, song_link))
         conn.commit()
 
-        st.success(f"Mood saved! Here's your recommended song: 🎵 [Listen Here]({song_link})")
+        st.success(f"I gotchhhha! Here's your recommended song: 🎵 [Listen Here]({song_link})")
 
 
 # --------------------------------------------
 # Mood History & Analytics
 # --------------------------------------------
-st.subheader("📊 Your Mood History & Analytics")
+st.subheader("📊 Basic Analysis of Your Feelings")
 
 if user_name.strip() != "":
     df = pd.read_sql("SELECT * FROM MoodLogs WHERE user_name=?", conn, params=(user_name,))
